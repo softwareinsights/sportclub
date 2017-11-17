@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      <p text-center>HOME</p> 
+      <p text-center>LOGIN</p> 
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,23 +12,23 @@
   <ion-list>
     
       <ion-item>
-        <ion-label stacked>Usuario</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
       </ion-item>
     
       <ion-item>
         <ion-label stacked>Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
     
     </ion-list>
 
     <div padding>
-      <button ion-button full>INICIAR SESION</button>
+      <button ion-button full (click)="accesa()">INICIAR SESION</button>
     </div>
 
     <div padding>
-      <button ion-button full>REGISTRATE</button>
+      <button ion-button full (click)="regi()">REGISTRATE</button>
     </div>
 
     <div padding>

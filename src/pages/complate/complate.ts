@@ -10,5 +10,7 @@ export class ComplatePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+  volver(){
+    this.navCtrl.pop();
+  }
 }

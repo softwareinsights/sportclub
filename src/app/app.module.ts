@@ -11,6 +11,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { ComplatePage } from '../pages/complate/complate';
 import { VerificationPage } from '../pages/verification/verification';
 import { ActivityPage } from '../pages/activity/activity';
+import { RecoverPage } from '../pages/recover/recover';
+import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { ActivityPage } from '../pages/activity/activity';
     WelcomePage,
     ComplatePage,
     VerificationPage,
-    ActivityPage
+    ActivityPage,
+    RecoverPage,
+    recoverymailPage
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,9 @@ import { ActivityPage } from '../pages/activity/activity';
     WelcomePage,
     ComplatePage,
     VerificationPage,
-    ActivityPage
+    ActivityPage,
+    RecoverPage,
+    recoverymailPage,
   ],
   providers: [
     StatusBar,

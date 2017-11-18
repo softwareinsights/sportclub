@@ -9,11 +9,14 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { ComplatePage } from '../pages/complate/complate';
 import { VerificationPage } from '../pages/verification/verification';
 import { ActivityPage } from '../pages/activity/activity';
+import { RecoverPage } from '../pages/recover/recover';
+import { recoverymailPage } from '../pages/recoverymail/recoverymail';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = recoverymailPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

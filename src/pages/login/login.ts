@@ -4,6 +4,7 @@ import {WelcomePage} from '../welcome/welcome';
 import {RegisterPage} from '../register/register';
 import { AlertController } from 'ionic-angular';
 import { StartPage } from '../start/start';
+import { RecoverPage } from '../recover/recover';
 
 
 @Component({
@@ -34,7 +35,7 @@ export class LoginPage {
       });
       confirm.present();
       */
-   // this.navCtrl.push(StartPage);
+    this.navCtrl.push(StartPage);
     }
  
  regi(){

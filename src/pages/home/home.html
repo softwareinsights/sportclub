@@ -12,19 +12,19 @@
   <ion-list>
     
       <ion-item>
-        <ion-label stacked>Usuario</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label stacked>Email</ion-label>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
       </ion-item>
     
       <ion-item>
         <ion-label stacked>Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
       </ion-item>
     
     </ion-list>
 
     <div padding>
-      <button ion-button full>INICIAR SESION</button>
+      <button ion-button full (click)="onSubmit()">INICIAR SESION</button>
     </div>
 
     <div padding>

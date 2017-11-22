@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import {WelcomePage} from '../welcome/welcome';
 import {RegisterPage} from '../register/register';
 import { AlertController } from 'ionic-angular';
+import { StartPage } from '../start/start';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class LoginPage {
     
 
     accesa(){
+      /*
       let confirm = this.alertCtrl.create({
         title: 'Lo sentimos :(',
         message: 'Aun no tenemos pantalla de inicio',
@@ -31,6 +33,8 @@ export class LoginPage {
         ]
       });
       confirm.present();
+      */
+   // this.navCtrl.push(StartPage);
     }
  
  regi(){

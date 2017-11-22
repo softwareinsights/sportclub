@@ -13,16 +13,8 @@ import { LoginInterface } from './login.interface';
 @Injectable()
 export class AuthService {
     
-    isLoggedIn: boolean = (
-        this.toBoolean(
-            this.localStorageService.get('isLoggedIn') ? this.localStorageService.get('isLoggedIn') : false,
-        )
-    );
-
-    toBoolean(object: any): boolean {
-        return (object.toString() === 'true') ? true : false;
-    }
-
+    isLoggedIn: boolean = false;
+    
     // store the URL so we can redirect after logging in
     redirectUrl: string;
 
@@ -46,6 +38,7 @@ export class AuthService {
             .catch(this.handleError)
             .do(val => {
                 this.isLoggedIn = true;
+                this.localStorageService.set('isLoggedIn', true);
             });
     }
 

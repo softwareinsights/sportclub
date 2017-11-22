@@ -1,7 +1,9 @@
+import { WelcomePage } from './../welcome/welcome';
 import { AuthService } from './login.service';
 import { LoginInterface } from './login.interface';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+
 
 
 @Component({
@@ -22,11 +24,16 @@ export class HomePage {
       'email': this.email,
       'password': this.password
     }
-    console.log(values);
-
     this.service.login(values)
       .subscribe(
-          (response: any) => console.log(response) );
+          (response: any) => {
+            if(response.id !== undefined) {
+              alert("¡Te has logeado correctamente!");
+              this.navCtrl.push(WelcomePage);
+            } else {
+              alert("Tu contraseña o correo no contraseña");
+            }
+          });
   }
 
 

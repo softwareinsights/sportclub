@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { ComplatePage } from '../pages/complate/complate';
@@ -17,7 +17,7 @@ import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    LoginPage,
     RegisterPage,
     WelcomePage,
     ComplatePage,
@@ -34,7 +34,7 @@ import { recoverymailPage } from '../pages/recoverymail/recoverymail';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    LoginPage,
     RegisterPage,
     WelcomePage,
     ComplatePage,

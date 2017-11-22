@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+
+import { ActivityPage } from '../activity/activity';
 
 @Component({
   selector: 'page-register',
@@ -11,11 +12,11 @@ export class RegisterPage {
   constructor(public navCtrl: NavController) {
 
   }
-  goToHome(){
-    
-    this.navCtrl.push(HomePage);
+siguiente(){
+  this.navCtrl.push(ActivityPage);
+}
 
-
-  }
-
+volver(){
+  this.navCtrl.pop();
+}
 }

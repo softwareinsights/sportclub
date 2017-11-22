@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
+import { ComplatePage } from '../complate/complate';
 
 @Component({
   selector: 'page-welcome',
@@ -7,8 +8,29 @@ import { NavController } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
+  }
+
+  completar(){
+    this.navCtrl.push(ComplatePage);
+  }
+  
+  siguiente(){
+    let confirm = this.alertCtrl.create({
+      title: 'Lo sentimos :(',
+      message: 'Aun no tenemos pantalla de inicio',
+      buttons: [
+        {
+      
+          text: 'De acuerdo',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }

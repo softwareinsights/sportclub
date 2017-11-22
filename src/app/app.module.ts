@@ -11,6 +11,12 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { ComplatePage } from '../pages/complate/complate';
 import { VerificationPage } from '../pages/verification/verification';
 import { ActivityPage } from '../pages/activity/activity';
+import { RecoverPage } from '../pages/recover/recover';
+import { recoverymailPage } from '../pages/recoverymail/recoverymail';
+import { StartPage } from '../pages/start/start';
+import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '@ionic-native/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,11 @@ import { ActivityPage } from '../pages/activity/activity';
     WelcomePage,
     ComplatePage,
     VerificationPage,
-    ActivityPage
+    ActivityPage,
+    RecoverPage,
+    recoverymailPage,
+    StartPage,
+
   ],
   imports: [
     BrowserModule,
@@ -34,11 +44,16 @@ import { ActivityPage } from '../pages/activity/activity';
     WelcomePage,
     ComplatePage,
     VerificationPage,
-    ActivityPage
+    ActivityPage,
+    RecoverPage,
+    recoverymailPage,
+    StartPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

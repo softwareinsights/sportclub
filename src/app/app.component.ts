@@ -9,6 +9,10 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { ComplatePage } from '../pages/complate/complate';
 import { VerificationPage } from '../pages/verification/verification';
 import { ActivityPage } from '../pages/activity/activity';
+import { RecoverPage } from '../pages/recover/recover';
+import { recoverymailPage } from '../pages/recoverymail/recoverymail';
+import { StartPage } from '../pages/start/start';
+
 @Component({
   templateUrl: 'app.html'
 })

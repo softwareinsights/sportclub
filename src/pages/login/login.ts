@@ -42,4 +42,9 @@ export class LoginPage {
   this.navCtrl.push(RegisterPage);
 
  } 
+
+ olvide(){
+  this.navCtrl.push(RecoverPage);
+
+ } 
 }

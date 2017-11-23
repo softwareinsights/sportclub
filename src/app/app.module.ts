@@ -66,10 +66,9 @@ import { LocalStorageModule } from 'angular-2-local-storage';
     SplashScreen,
     Geolocation,
     GoogleMaps,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     Configuration
-
   ]
 })
 export class AppModule {}

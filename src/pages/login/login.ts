@@ -1,45 +1,42 @@
+
+import { WelcomePage } from './../welcome/welcome';
+import { AuthService } from './login.service';
+import { LoginInterface } from './login.interface';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {WelcomePage} from '../welcome/welcome';
-import {RegisterPage} from '../register/register';
-import { AlertController } from 'ionic-angular';
-import { StartPage } from '../start/start';
-import { RecoverPage } from '../recover/recover';
+
 
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
-
 export class LoginPage {
+  
+  email:string;
+  password:string;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {   }
+  constructor(public navCtrl: NavController, 
+    protected service: AuthService ) {
+  }
 
-    
-
-    accesa(){
-      /*
-      let confirm = this.alertCtrl.create({
-        title: 'Lo sentimos :(',
-        message: 'Aun no tenemos pantalla de inicio',
-        buttons: [
-          {
-        
-            text: 'De acuerdo',
-            handler: () => {
-              console.log('Agree clicked');
-            }
-          }
-        ]
-      });
-      confirm.present();
-      */
-    this.navCtrl.push(StartPage);
+  onSubmit(): void {
+    const values: LoginInterface = {
+      'email': this.email,
+      'password': this.password
     }
- 
- regi(){
-  this.navCtrl.push(RegisterPage);
+    this.service.login(values)
+      .subscribe(
+          (response: any) => {
+            console.log("aqui llega", response.id);
+            if(response.id !== undefined) {
+              alert("¡Te has logeado correctamente!");
+              this.navCtrl.push(WelcomePage);
+            } else {
+              alert("Tu contraseña o correo no son correctos");
+            }
+          });
+  }
 
- } 
+
 }

@@ -4,8 +4,6 @@ import { LoginInterface } from './login.interface';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
-import { WelcomePage } from '../welcome/welcome';
-
 
 
 

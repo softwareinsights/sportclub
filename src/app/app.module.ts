@@ -16,6 +16,10 @@ import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { Configuration } from './app.constants';
+import { AuthService } from '../pages/login/login.service';
+import { HttpModule } from '@angular/http';
+import { LocalStorageModule } from 'angular-2-local-storage/dist/local-storage.module';
 
 
 @NgModule({
@@ -34,7 +38,12 @@ import { GoogleMaps } from '@ionic-native/google-maps';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    LocalStorageModule.withConfig({
+        prefix: 'vieliquidaciones',
+        storageType: 'localStorage',
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,7 +63,9 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     SplashScreen,
     Geolocation,
     GoogleMaps,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService,
+    Configuration
   ]
 })
 export class AppModule {}

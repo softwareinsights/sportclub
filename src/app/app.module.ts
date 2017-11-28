@@ -1,5 +1,5 @@
 import { Configuration } from './app.constants';
-import { AuthService } from './../pages/home/login.service';
+import { AuthService } from './../pages/login/login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';

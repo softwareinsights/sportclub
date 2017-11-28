@@ -1,3 +1,4 @@
+import { RegisterPage } from './../register/register';
 
 import { WelcomePage } from './../welcome/welcome';
 import { AuthService } from './login.service';
@@ -18,6 +19,10 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, 
     protected service: AuthService ) {
+  }
+
+  registro(): void {
+     this.navCtrl.push(RegisterPage);
   }
 
   onSubmit(): void {

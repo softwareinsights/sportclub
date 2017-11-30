@@ -5,6 +5,7 @@ import { AuthService } from './login.service';
 import { LoginInterface } from './login.interface';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { RecoverPage } from '../recover/recover';
 
 
 
@@ -24,6 +25,10 @@ export class LoginPage {
   registro(): void {
      this.navCtrl.push(RegisterPage);
   }
+
+  olvide(): void {
+    this.navCtrl.push(RecoverPage);
+ }
 
   onSubmit(): void {
     const values: LoginInterface = {

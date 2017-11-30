@@ -12,39 +12,40 @@
     
       <ion-item>
         <ion-label stacked>Nombre de Usuario</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]="username"  type="text"></ion-input>
       </ion-item>
     
       <ion-item>
         <ion-label stacked>Nombre</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input  [(ngModel)]="realm" type="text"></ion-input>
       </ion-item>
-
+   <!--
       <ion-item>
           <ion-label stacked>Apeelidos</ion-label>
           <ion-input type="text"></ion-input>
         </ion-item>
+      -->
 
         <ion-item>
             <ion-label stacked>Correo Electronico</ion-label>
-            <ion-input type="email"></ion-input>
+            <ion-input [(ngModel)]="email" type="email"></ion-input>
           </ion-item>
 
           <ion-item>
               <ion-label stacked>Contraseña</ion-label>
-              <ion-input type="password"></ion-input>
+              <ion-input [(ngModel)]="password" type="password"></ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label stacked>Confirmar Contraseña</ion-label>
-                <ion-input type="password"></ion-input>
+                <ion-input [(ngModel)]="repassword" type="password"></ion-input>
               </ion-item>
     
     </ion-list>
 
     <div padding text-center>
-      <button ion-button (click)="volver()">Regresar</button>
+      <button ion-button (click)="volver()" class="btn">Regresar</button>
 
-      <button ion-button (click)="siguiente()">Siguiente</button>
+      <button ion-button (click)="onSubmit()" class="btn">Siguiente</button>
     </div>
 </ion-content>

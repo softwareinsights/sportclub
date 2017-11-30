@@ -1,22 +1,23 @@
+
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      <p text-center>LOGIN</p> 
+    <ion-title class="fondo-2">
+      <p text-center><span>LOGIN</span></p> 
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <h1 text-center>Bienvenido a YPIX</h1>
-   <p text-center>Hoy hazlo, Mañana superalo</p>
-  <ion-list>
+<ion-content padding class="fondo">
+    <h1 text-center> <span> Bienvenido a YPIX </span> </h1>
+   <p text-center> <span> ¡Superalo y Compartelo! </span> </p>
+  <ion-list >
     
-      <ion-item>
+      <ion-item class="fondo">
         <ion-label stacked>Email</ion-label>
         <ion-input [(ngModel)]="email" type="email"></ion-input>
       </ion-item>
     
-      <ion-item>
+      <ion-item class="fondo">
         <ion-label stacked>Contraseña</ion-label>
         <ion-input [(ngModel)]="password" type="password"></ion-input>
       </ion-item>
@@ -24,11 +25,11 @@
     </ion-list>
 
     <div padding>
-      <button ion-button full (click)="onSubmit()">INICIAR SESION</button>
+      <button ion-button full (click)="onSubmit()" class="btn">INICIAR SESION</button>
     </div>
 
     <div padding>
-      <button ion-button full (click)="registro()">REGISTRATE</button>
+      <button ion-button full (click)="registro()" class="btn">REGISTRATE</button>
     </div>
 
     <div padding>

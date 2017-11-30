@@ -1,5 +1,3 @@
-import { Configuration } from './app.constants';
-import { AuthService } from './../pages/login/login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -13,16 +11,16 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { ComplatePage } from '../pages/complate/complate';
 import { VerificationPage } from '../pages/verification/verification';
 import { ActivityPage } from '../pages/activity/activity';
-
 import { RecoverPage } from '../pages/recover/recover';
 import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
-
-
 import { HttpModule } from '@angular/http';
+import { Configuration } from './app.constants';
+import { AuthService } from '../pages/login/login.service';
 import { LocalStorageModule } from 'angular-2-local-storage';
+import { RegisterService } from '../pages/register/register.service';
 
 
 @NgModule({
@@ -68,7 +66,8 @@ import { LocalStorageModule } from 'angular-2-local-storage';
     GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    Configuration
+    Configuration,
+    RegisterService
   ]
 })
 export class AppModule {}

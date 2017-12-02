@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Configuration {
 
-  Server: string = 'http://localhost:3000/';
+  Server: string = 'https://sportclubapisoftinsi.herokuapp.com/';
   ApiUrl: string = 'api/';
   ServerWithApiUrl = this.Server + this.ApiUrl;
 

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {RegisterService} from './register.service';
-import { ActivityPage } from '../activity/activity';
 import { RegisterInterface } from './register.interface';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-register',
@@ -17,10 +17,6 @@ export class RegisterPage {
 
   constructor(public navCtrl: NavController, private service: RegisterService ) {  }
 
-    siguiente(){
-      this.navCtrl.push(ActivityPage);
-    }
-
     volver(){
       this.navCtrl.pop();
     }
@@ -30,19 +26,15 @@ export class RegisterPage {
         'realm': this.realm,
         'email': this.email,
         'password': this.password,
-        'username':this.username,
-        'repassword': this.repassword
+        'username':this.username
       }
       this.service.register(values)
         .subscribe(
             (response: any) => {
-              console.log("aqui llega", response.id);
               if(response.id !== undefined) {
-                alert("¡Te has logeado correctamente!");
-                this.navCtrl.push(ActivityPage);
-              } else {
-                alert("Tu contraseña o correo no son correctos");
-              }
+                alert("¡Te has registrado correctamente!");
+                this.navCtrl.push(LoginPage);
+              } 
             });
     }
 }

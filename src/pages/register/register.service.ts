@@ -9,15 +9,8 @@ import { Configuration } from './../../app/app.constants';
 import { RegisterInterface } from './register.interface';
 
 
-
-
 @Injectable()
 export class RegisterService {
-    
-    isLoggedIn: boolean = false;
-    
-    // store the URL so we can redirect after logging in
-    redirectUrl: string;
 
     private actionUrl: string;
     private headers: Headers;
@@ -37,11 +30,6 @@ export class RegisterService {
         return this._http.post(this.actionUrl, toAdd, { headers: this.headers })
             .map((response: Response) => <any>response.json())
             .catch(this.handleError);
-    }
-
-    logout(): void {
-        this.isLoggedIn = false;
-        this.localStorageService.set('isLoggedIn', false);
     }
 
     private handleError(error: Response) {

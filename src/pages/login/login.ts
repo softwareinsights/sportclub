@@ -38,12 +38,13 @@ export class LoginPage {
     this.service.login(values)
       .subscribe(
           (response: any) => {
-            console.log("aqui llega", response.id);
-            if(response.id !== undefined) {
+            console.log("response", response);
+
+            if(response.error !== undefined) {
+              alert("Error al logearte!");
+            } else if(response.id !== undefined) {
               alert("¡Te has logeado correctamente!");
               this.navCtrl.push(WelcomePage);
-            } else {
-              alert("Tu contraseña o correo no son correctos");
             }
           });
   }

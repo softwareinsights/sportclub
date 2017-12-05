@@ -9,7 +9,7 @@ import {
   MarkerOptions,
   Marker
  } from '@ionic-native/google-maps';
- import { Geolocation } from '@ionic-native/geolocation';
+ import { Geolocation, Geoposition } from '@ionic-native/geolocation';
  
 
 @Component({
@@ -21,6 +21,12 @@ export class StartPage {
   map: GoogleMap;
 
   constructor(private googleMaps: GoogleMaps, private geolocation: Geolocation) { }
+
+  geolocationNative(){
+    this.geolocation.getCurrentPosition().then((geoposition: Geoposition) =>{
+      console.log(geoposition);
+    })
+  }
 
   ionViewDidLoad() {
    this.loadMap();

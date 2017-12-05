@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {RegisterService} from './register.service';
-import { ActivityPage } from '../activity/activity';
 import { RegisterInterface } from './register.interface';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-register',
@@ -33,8 +33,8 @@ export class RegisterPage {
             (response: any) => {
               if(response.id !== undefined) {
                 alert("¡Te has registrado correctamente!");
-                this.navCtrl.push(ActivityPage);
-              }
+                this.navCtrl.push(LoginPage);
+              } 
             });
     }
 }

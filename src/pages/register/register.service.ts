@@ -11,14 +11,12 @@ import { RegisterInterface } from './register.interface';
 
 @Injectable()
 export class RegisterService {
-
     private actionUrl: string;
     private headers: Headers;
 
     constructor(
         private _http: Http, 
-        private _configuration: Configuration,
-        private localStorageService: LocalStorageService) {
+        private _configuration: Configuration) {
 
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json; charset=UTF-8');

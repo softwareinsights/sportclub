@@ -12,6 +12,10 @@ import { ComplatePage } from '../pages/complate/complate';
 import { VerificationPage } from '../pages/verification/verification';
 import { ActivityPage } from '../pages/activity/activity';
 import { RecoverPage } from '../pages/recover/recover';
+import { HelpPage} from '../pages/help/help';
+import {ActivitiesPage} from '../pages/activities/activities'
+import { AboutPage} from '../pages/about/about'
+import { ContactPage} from '../pages/contact/contact'
 import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -33,6 +37,10 @@ import { RegisterService } from '../pages/register/register.service';
     VerificationPage,
     ActivityPage,
     RecoverPage,
+    HelpPage,
+    ActivitiesPage,
+    ContactPage,
+    AboutPage,
     recoverymailPage,
     StartPage,
 
@@ -53,6 +61,10 @@ import { RegisterService } from '../pages/register/register.service';
     RegisterPage,
     WelcomePage,
     ComplatePage,
+    HelpPage,
+    ActivitiesPage,
+    AboutPage,
+    ContactPage,
     VerificationPage,
     ActivityPage,
     RecoverPage,

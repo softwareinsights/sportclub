@@ -38,7 +38,7 @@ export class AuthService {
             .catch(this.handleError)
             .do(val => {
                 this.isLoggedIn = true;
-                this.localStorageService.set('isLoggedIn', true);
+                this.localStorageService.set('isLoggedIn', true);// creamos variale en logged in
             });
     }
 

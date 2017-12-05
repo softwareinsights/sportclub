@@ -1,11 +1,12 @@
 import { RegisterPage } from './../register/register';
-
+import { LocalStorageService } from 'angular-2-local-storage';
 import { WelcomePage } from './../welcome/welcome';
 import { AuthService } from './login.service';
 import { LoginInterface } from './login.interface';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';  //importamos init
 import { NavController } from 'ionic-angular';
 import { RecoverPage } from '../recover/recover';
+import { StartPage } from '../start/start';
 
 
 
@@ -13,13 +14,19 @@ import { RecoverPage } from '../recover/recover';
   selector: 'page-login',
   templateUrl: 'login.html'
 })
-export class LoginPage {
+export class LoginPage implements OnInit {  //Marcara error hasta no crear la funcion
   
   email:string;
   password:string;
 
   constructor(public navCtrl: NavController, 
-    protected service: AuthService ) {
+    protected service: AuthService, private localStorageService: LocalStorageService ) { //Añadimos el constructor
+  }
+  ngOnInit(){
+    if(this.localStorageService.get('isLoggedIn')) { //No necesitamos el true, A partir de la varible que creamos definira si pasa a start o se queda en loggin
+      this.navCtrl.push(StartPage);
+
+    }
   }
 
   registro(): void {

@@ -7,7 +7,8 @@ import {
   GoogleMapOptions,
   CameraPosition,
   MarkerOptions,
-  Marker
+  Marker,
+  LatLng
  } from '@ionic-native/google-maps';
  import { Geolocation, Geoposition } from '@ionic-native/geolocation';
  
@@ -16,76 +17,69 @@ import {
   selector: 'page-start',
   templateUrl: 'start.html'
 })
-
 export class StartPage {
   map: GoogleMap;
 
-  constructor(private googleMaps: GoogleMaps, private geolocation: Geolocation) { }
-
-  geolocationNative(){
-    this.geolocation.getCurrentPosition().then((geoposition: Geoposition) =>{
-      console.log(geoposition);
-    })
-  }
+  constructor(public navCtrl: NavController, private googleMaps: GoogleMaps, private geolocation: Geolocation) { }
 
   ionViewDidLoad() {
    this.loadMap();
   }
 
- loadMap() {
+  moveCamera(loc: LatLng) {
+    let options: CameraPosition<any> = {
+      target: loc,
+      zoom: 15,
+      tilt: 10
+    }
+    this.map.moveCamera(options)
+  }
 
-    let mapOptions: GoogleMapOptions = {
-      camera: {
-        target: {
-          lat: 43.0741904,
-          lng: -89.3809802
-        },
-        zoom: 18,
-        tilt: 30
-      }
-    };
+  createMarker(loc: LatLng, title: string) {
+    let markerOptions: MarkerOptions = {
+      position: loc,
+      title: title
+    }
+    return this.map.addMarker(markerOptions)
+  }
 
-    this.map = this.googleMaps.create('map_canvas', mapOptions);
+
+  loadMap() {
+
+    // Crea la instancia del mapa con el elemento html
+    this.map = this.googleMaps.create('map_canvas');
 
     // Wait the MAP_READY before using any methods.
     this.map.one(GoogleMapsEvent.MAP_READY)
       .then(() => {
         console.log('Map is ready!');
-
-        // Now you can use all methods safely.
-        this.map.addMarker({
-            title: 'Ionic',
-            icon: 'blue',
-            animation: 'DROP',
-            position: {
-              lat: 43.0741904,
-              lng: -89.3809802
-            }
-          })
-          .then(marker => {
-            marker.on(GoogleMapsEvent.MARKER_CLICK)
-              .subscribe(() => {
-                alert('clicked');
-              });
-          });
-
       });
       
-      this.geolocation.getCurrentPosition().then((resp) => {
-        // resp.coords.latitude
-        // resp.coords.longitude
+      this.geolocation.getCurrentPosition().then((geoposition: Geoposition) => {
+
+          // Mi posición
+          let loc: LatLng = new LatLng(geoposition.coords.latitude, geoposition.coords.longitude);
+          this.moveCamera(loc);
+
+          // Crea marcador para mi posición
+          this.createMarker(loc, "Aquí estoy").then((marker: Marker) => {
+            marker.showInfoWindow();
+          })
+          .catch( err => {
+            console.log(err);
+          });
+
        }).catch((error) => {
          console.log('Error getting location', error);
        });
        
+       // Se suscribe a los cambios de posición del dispositivo
        let watch = this.geolocation.watchPosition();
-       watch.subscribe((data) => {
-        // data can be a set of coordinates, or an error (if an error occurred).
-        // data.coords.latitude
-        // data.coords.longitude
+       watch.subscribe((geoposition: Geoposition) => {
+          let loc: LatLng = new LatLng(geoposition.coords.latitude, geoposition.coords.longitude);
+          this.moveCamera(loc);
        });
-       
-
+      
     }
 
 }

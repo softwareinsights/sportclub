@@ -1,5 +1,10 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton>
+    <ion-button start>
+      <button ion-button icon-only menu-toggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-button>
     <ion-title>
       <h1>Google Maps</h1>
     </ion-title>
@@ -7,7 +12,5 @@
 </ion-header> 
 
 <ion-content class="fondo" padding>
-  
     <div id="map_canvas"></div>
-     
 </ion-content>

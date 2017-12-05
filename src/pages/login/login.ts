@@ -6,6 +6,8 @@ import { LoginInterface } from './login.interface';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RecoverPage } from '../recover/recover';
+import { LocalStorageService } from 'angular-2-local-storage';
+import { StartPage } from '../start/start';
 
 
 
@@ -19,8 +21,15 @@ export class LoginPage {
   password:string;
 
   constructor(public navCtrl: NavController, 
-    protected service: AuthService ) {
+    protected service: AuthService, private localStorageService: LocalStorageService) {
+
+      if(this.localStorageService.get("isLoggetIn")){
+        this.navCtrl.push(StartPage);
+      }
+
+
   }
+
 
   registro(): void {
      this.navCtrl.push(RegisterPage);
@@ -29,6 +38,7 @@ export class LoginPage {
   olvide(): void {
     this.navCtrl.push(RecoverPage);
  }
+
 
   onSubmit(): void {
     const values: LoginInterface = {

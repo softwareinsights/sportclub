@@ -19,28 +19,22 @@
         <ion-label stacked>Nombre</ion-label>
         <ion-input  [(ngModel)]="realm" type="text"></ion-input>
       </ion-item>
-   <!--
+
       <ion-item>
-          <ion-label stacked>Apeelidos</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-label stacked>Correo Electronico</ion-label>
+          <ion-input [(ngModel)]="email" type="email"></ion-input>
         </ion-item>
-      -->
 
-        <ion-item>
-            <ion-label stacked>Correo Electronico</ion-label>
-            <ion-input [(ngModel)]="email" type="email"></ion-input>
-          </ion-item>
+      <ion-item>
+          <ion-label stacked>Contraseña</ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
 
-          <ion-item>
-              <ion-label stacked>Contraseña</ion-label>
-              <ion-input [(ngModel)]="password" type="password"></ion-input>
-            </ion-item>
-
-            <ion-item>
-                <ion-label stacked>Confirmar Contraseña</ion-label>
-                <ion-input [(ngModel)]="repassword" type="password"></ion-input>
-              </ion-item>
-    
+      <ion-item>
+          <ion-label stacked>Confirmar Contraseña</ion-label>
+          <ion-input [(ngModel)]="repassword" type="password"></ion-input>
+        </ion-item>
+  
     </ion-list>
 
     <div padding text-center>

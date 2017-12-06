@@ -1,3 +1,5 @@
+import { PlaceService } from './../pages/place/place.service';
+import { PlacePage } from './../pages/place/place';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -35,7 +37,7 @@ import { RegisterService } from '../pages/register/register.service';
     RecoverPage,
     recoverymailPage,
     StartPage,
-
+    PlacePage,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { RegisterService } from '../pages/register/register.service';
     ActivityPage,
     RecoverPage,
     recoverymailPage,
-    StartPage
+    StartPage,
+    PlacePage
   ],
   providers: [
     StatusBar,
@@ -67,7 +70,8 @@ import { RegisterService } from '../pages/register/register.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     Configuration,
-    RegisterService
+    RegisterService,
+    PlaceService,
   ]
 })
 export class AppModule {}

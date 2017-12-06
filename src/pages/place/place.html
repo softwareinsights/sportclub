@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-buttons start>
+      <button ion-button icon-only menu-toggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+    <ion-title>
+      <h1>Agregar Lugar</h1>
+    </ion-title>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content class="fondo" padding>
+  
+    <div id="map_canvas"></div>
+
+    <ion-content padding>
+  
+      <ion-item>
+        <ion-label stacked>Nombre</ion-label>
+        <ion-input  [(ngModel)]="nombre" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Descripción</ion-label>
+          <ion-input [(ngModel)]="descripcion" type="descripcion"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <div padding text-center>
+      <button ion-button (click)="localizame()">Localízame</button>
+
+      <button ion-button (click)="onSubmit()">Guardar</button>
+    </div>
+     
+</ion-content>

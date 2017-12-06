@@ -10,7 +10,6 @@ import { LocalStorageService } from 'angular-2-local-storage';
 import { StartPage } from '../start/start';
 
 
-
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -22,14 +21,10 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, 
     protected service: AuthService, private localStorageService: LocalStorageService) {
-
       if(this.localStorageService.get("isLoggetIn")){
         this.navCtrl.push(StartPage);
       }
-
-
   }
-
 
   registro(): void {
      this.navCtrl.push(RegisterPage);
@@ -38,7 +33,6 @@ export class LoginPage {
   olvide(): void {
     this.navCtrl.push(RecoverPage);
  }
-
 
   onSubmit(): void {
     const values: LoginInterface = {

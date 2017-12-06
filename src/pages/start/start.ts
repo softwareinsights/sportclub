@@ -14,8 +14,6 @@ import {
  import { Geolocation, Geoposition } from '@ionic-native/geolocation';
  
 
-
-
 @Component({
   selector: 'page-start',
   templateUrl: 'start.html'

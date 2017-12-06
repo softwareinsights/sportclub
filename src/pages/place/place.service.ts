@@ -6,11 +6,12 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Configuration } from './../../app/app.constants';
-import { RegisterInterface } from './register.interface';
+import { RegisterInterface } from '../register/register.interface';
+import { PlaceInterface} from './place.interface'
 
 
 @Injectable()
-export class RegisterService {
+export class PlaceService {
     private actionUrl: string;
     private headers: Headers;
 
@@ -22,12 +23,13 @@ export class RegisterService {
         this.headers.append('Content-Type', 'application/json; charset=UTF-8'); //tipos de datos del headers
     }
 
-    register(values: RegisterInterface): Observable<any> {
-        this.actionUrl = `${this._configuration.ServerWithApiUrl}usuarios`;
+    register(values: PlaceInterface): Observable<any> {
+        this.actionUrl = `${this._configuration.ServerWithApiUrl}localidades`;
         const toAdd = JSON.stringify(values);
         return this._http.post(this.actionUrl, toAdd, { headers: this.headers })
             .map((response: Response) => <any>response.json())
             .catch(this.handleError);
+            
     }
 
     private handleError(error: Response) {

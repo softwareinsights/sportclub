@@ -12,6 +12,10 @@ import { ComplatePage } from '../pages/complate/complate';
 import { VerificationPage } from '../pages/verification/verification';
 import { ActivityPage } from '../pages/activity/activity';
 import { RecoverPage } from '../pages/recover/recover';
+import { HelpPage} from '../pages/help/help';
+import {ActivitiesPage} from '../pages/activities/activities'
+import { AboutPage} from '../pages/about/about'
+import { ContactPage} from '../pages/contact/contact'
 import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -21,7 +25,10 @@ import { Configuration } from './app.constants';
 import { AuthService } from '../pages/login/login.service';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { RegisterService } from '../pages/register/register.service';
-
+import { PlacePage} from '../pages/place/place'
+import { PlaceService } from '../pages/place/place.service';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
+import { AccordeonComponent} from'../components/accordeon/accordeon'
 
 @NgModule({
   declarations: [
@@ -33,8 +40,14 @@ import { RegisterService } from '../pages/register/register.service';
     VerificationPage,
     ActivityPage,
     RecoverPage,
+    HelpPage,
+    ActivitiesPage,
+    ContactPage,
+    AboutPage,
     recoverymailPage,
     StartPage,
+    PlacePage,
+    AccordeonComponent
 
   ],
   imports: [
@@ -53,11 +66,16 @@ import { RegisterService } from '../pages/register/register.service';
     RegisterPage,
     WelcomePage,
     ComplatePage,
+    HelpPage,
+    ActivitiesPage,
+    AboutPage,
+    ContactPage,
     VerificationPage,
     ActivityPage,
     RecoverPage,
     recoverymailPage,
-    StartPage
+    StartPage,
+    PlacePage
   ],
   providers: [
     StatusBar,
@@ -67,7 +85,8 @@ import { RegisterService } from '../pages/register/register.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     Configuration,
-    RegisterService
+    RegisterService,
+    PlaceService
   ]
 })
 export class AppModule {}

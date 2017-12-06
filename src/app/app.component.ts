@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { HelpPage} from '../pages/help/help';
+import { ActivitiesPage} from '../pages/activities/activities';
+import { AboutPage} from '../pages/about/about';
+import { ContactPage} from '../pages/contact/contact'
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { WelcomePage } from '../pages/welcome/welcome';
@@ -12,20 +15,24 @@ import { ActivityPage } from '../pages/activity/activity';
 import { RecoverPage } from '../pages/recover/recover';
 import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
+import { PlacePage} from '../pages/place/place'
+import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = LoginPage; //Página a lanzar
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(public navCtrl: NavController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    
   }
 }
 

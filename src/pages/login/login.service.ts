@@ -13,32 +13,32 @@ import { LoginInterface } from './login.interface';
 @Injectable()
 export class AuthService {
     
-    isLoggedIn: boolean = false;
+    isLoggedIn: boolean = false;    //Declaracion e inicializacin
     
     // store the URL so we can redirect after logging in
     redirectUrl: string;
 
-    private actionUrl: string;
+    private actionUrl: string;  //Declaracion de variables
     private headers: Headers;
 
     constructor(
         private _http: Http, 
         private _configuration: Configuration,
-        private localStorageService: LocalStorageService) {
+        private localStorageService: LocalStorageService) {//Importamos la clase
 
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json; charset=UTF-8');
     }
 
-    login(values: LoginInterface): Observable<any> {
-        this.actionUrl = `${this._configuration.ServerWithApiUrl}usuarios/login`;
+    login(values: LoginInterface): Observable<any> {    //Proceso asincrono
+        this.actionUrl = `${this._configuration.ServerWithApiUrl}usuarios/login`;   //Inicializamos la variable con la ruta de la api
         const toAdd = JSON.stringify(values);
         return this._http.post(this.actionUrl, toAdd, { headers: this.headers })
             .map((response: Response) => <any>response.json())
-            .catch(this.handleError)
-            .do(val => {
-                this.isLoggedIn = true;
-                this.localStorageService.set('isLoggedIn', true);
+            .catch(this.handleError)    //Verifica si hay errores
+            .do(val => {    //Una vez que te loggeas 
+                this.isLoggedIn = true; //
+                this.localStorageService.set('isLoggedIn', true);// creamos variale en logged in
             });
     }
 

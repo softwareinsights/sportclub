@@ -16,8 +16,6 @@
 <ion-content class="fondo" padding>
   
     <div id="map_canvas"></div>
-
-    <ion-content padding>
   
       <ion-item>
         <ion-label stacked>Nombre</ion-label>
@@ -25,11 +23,9 @@
       </ion-item>
 
       <ion-item>
-          <ion-label stacked>Descripción</ion-label>
-          <ion-input [(ngModel)]="descripcion" type="descripcion"></ion-input>
-        </ion-item>
-
-    </ion-list>
+        <ion-label stacked>Descripción</ion-label>
+        <ion-input [(ngModel)]="descripcion" type="descripcion"></ion-input>
+      </ion-item>
 
     <div padding text-center>
       <button ion-button (click)="localizame()">Localízame</button>

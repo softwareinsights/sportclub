@@ -1,3 +1,4 @@
+import { PlacePage } from './../place/place';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {
@@ -12,6 +13,8 @@ import {
  } from '@ionic-native/google-maps';
  import { Geolocation, Geoposition } from '@ionic-native/geolocation';
  
+
+
 
 @Component({
   selector: 'page-start',

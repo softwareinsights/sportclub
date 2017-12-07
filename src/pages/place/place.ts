@@ -21,24 +21,20 @@ import {
 export class PlacePage {
   map: GoogleMap;
 
+
   constructor(public navCtrl: NavController, private googleMaps: GoogleMaps, private geolocation: Geolocation, private service: PlaceService) { }
 
-
   nombre: string;
-  descripcion: string;
+  direccion: string;
   lat: number;
-  lng:number;
-
-
-
-  volver(){
-    this.navCtrl.pop();
-  }
+  lng: number;
 
   onSubmit(): void {
     const values: any = {
       'nombre': this.nombre,
-      'descripcion': this.descripcion
+      'direccion': this.direccion,
+      'lat': this.lat,
+      'lng': this.lng
     }
     this.service.create(values)
       .subscribe(
@@ -72,7 +68,10 @@ export class PlacePage {
 
 
   localizame(){
+
+     alert("Esto te debería localizar pero está desactivado por el momento");
    
+     /*
       this.geolocation.getCurrentPosition().then((geoposition: Geoposition) => {
 
           // Mi posición
@@ -93,14 +92,26 @@ export class PlacePage {
        }).catch((error) => {
          console.log('Error getting location', error);
        });
+       */
        
   }
 
 
   loadMap() {
+    
+    let mapOptions: GoogleMapOptions = {
+      camera: {
+        target: {
+          lat: 43.0741904,
+          lng: -89.3809802
+        },
+        zoom: 18,
+        tilt: 30
+      }
+    };
 
     // Crea la instancia del mapa con el elemento html
-    this.map = this.googleMaps.create('map_canvas');
+    this.map = this.googleMaps.create('map_canvas', mapOptions);
 
     // Wait the MAP_READY before using any methods.
     this.map.one(GoogleMapsEvent.MAP_READY)

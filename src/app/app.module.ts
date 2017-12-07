@@ -1,3 +1,4 @@
+import { StartService } from './../pages/start/start.service';
 import { PlaceService } from './../pages/place/place.service';
 import { PlacePage } from './../pages/place/place';
 import { BrowserModule } from '@angular/platform-browser';
@@ -72,6 +73,7 @@ import { RegisterService } from '../pages/register/register.service';
     Configuration,
     RegisterService,
     PlaceService,
+    StartService,
   ]
 })
 export class AppModule {}

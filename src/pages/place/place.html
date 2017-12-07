@@ -19,8 +19,16 @@
       <ion-input  [(ngModel)]="nombre" type="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Descripción</ion-label>
-      <ion-input [(ngModel)]="descripcion" type="descripcion"></ion-input>
+      <ion-label stacked>Dirección</ion-label>
+      <ion-input [(ngModel)]="direccion" type="direccion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Latitud</ion-label>
+      <ion-input [(ngModel)]="lat" type="lat"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Longitud</ion-label>
+      <ion-input [(ngModel)]="lng" type="lng"></ion-input>
     </ion-item>
     <div padding text-center>
       <button ion-button (click)="localizame()">Localízame</button>
@@ -30,7 +38,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <div id="map_"></div>
+        <div id="map_canvas"></div>
       </ion-col>
     </ion-row>
   </ion-grid>

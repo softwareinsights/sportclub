@@ -15,7 +15,7 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-ion-content, ion-item{
+ion-content, ion-item{  //Nos permite manipular los colores de toda la aplicacion
     background-color:  #212121 !important;
     color: white !important;
 }

@@ -16,7 +16,7 @@ import { ActivityPage } from '../pages/activity/activity';
 import { RecoverPage } from '../pages/recover/recover';
 import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
-import { Geolocation } from '@ionic-native/geolocation';
+import { Geolocation } from '@ionic-native/geolocation';3
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { HttpModule } from '@angular/http';
 import { Configuration } from './app.constants';
@@ -26,52 +26,52 @@ import { RegisterService } from '../pages/register/register.service';
 
 
 @NgModule({
-  declarations: [
-    MyApp,
-    LoginPage,
-    RegisterPage,
-    WelcomePage,
-    ComplatePage,
-    VerificationPage,
-    ActivityPage,
-    RecoverPage,
-    recoverymailPage,
-    StartPage,
-    PlacePage,
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    HttpModule,
-    LocalStorageModule.withConfig({
-        prefix: 'vieliquidaciones',
-        storageType: 'localStorage',
-    }),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    LoginPage,
-    RegisterPage,
-    WelcomePage,
-    ComplatePage,
-    VerificationPage,
-    ActivityPage,
-    RecoverPage,
-    recoverymailPage,
-    StartPage,
-    PlacePage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    Geolocation,
-    GoogleMaps,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService,
-    Configuration,
-    RegisterService,
-    PlaceService,
-  ]
+ declarations: [
+   MyApp,
+   LoginPage,
+   RegisterPage,
+   WelcomePage,
+   ComplatePage,
+   VerificationPage,
+   ActivityPage,
+   RecoverPage,
+   recoverymailPage,
+   StartPage,
+   PlacePage,
+ ],
+ imports: [
+   BrowserModule,
+   IonicModule.forRoot(MyApp),
+   HttpModule,
+   LocalStorageModule.withConfig({
+       prefix: 'vieliquidaciones',
+       storageType: 'localStorage',
+   }),
+ ],
+ bootstrap: [IonicApp],
+ entryComponents: [
+   MyApp,
+   LoginPage,
+   RegisterPage,
+   WelcomePage,
+   ComplatePage,
+   VerificationPage,
+   ActivityPage,
+   RecoverPage,
+   recoverymailPage,
+   StartPage,
+   PlacePage
+ ],
+ providers: [
+   StatusBar,
+   SplashScreen,
+   Geolocation,
+   GoogleMaps,
+   {provide: ErrorHandler, useClass: IonicErrorHandler},
+   AuthService,
+   Configuration,
+   RegisterService,
+   PlaceService,
+ ]
 })
 export class AppModule {}

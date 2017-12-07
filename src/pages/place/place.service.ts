@@ -19,7 +19,7 @@ export class PlaceService {
         private _configuration: Configuration) {
 
         this.headers = new Headers();
-        this.headers.append('Content-Type', 'application/json; charset=UTF-8');
+        this.headers.append('Content-Type', 'application/json; charset=UTF-8'); //tipos de datos del headers
     }
 
     create(values: PlaceInterface): Observable<any> {

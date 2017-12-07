@@ -8,8 +8,8 @@ import { LoginPage } from '../login/login';
   selector: 'page-register',
   templateUrl: 'register.html'
 })
-export class RegisterPage {
-  realm:string;
+export class RegisterPage { //Exportara la clase register page
+  realm:string; 
   username:string;
   email:string;
   password:string;
@@ -17,7 +17,7 @@ export class RegisterPage {
 
   constructor(public navCtrl: NavController, private service: RegisterService ) {  }
 
-    volver(){
+    volver(){ 
       this.navCtrl.pop();
     }
 
@@ -29,11 +29,11 @@ export class RegisterPage {
         'username':this.username
       }
       this.service.register(values)
-        .subscribe(
+        .subscribe( //
             (response: any) => {
-              if(response.id !== undefined) {
+              if(response.id !== undefined) { // Condicional para definir site has loggeado
                 alert("¡Te has registrado correctamente!");
-                this.navCtrl.push(LoginPage);
+                this.navCtrl.push(LoginPage); 
               } 
             });
     }

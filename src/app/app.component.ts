@@ -3,7 +3,10 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { HelpPage} from '../pages/help/help';
+import { ActivitiesPage} from '../pages/activities/activities';
+import { AboutPage} from '../pages/about/about';
+import { ContactPage} from '../pages/contact/contact'
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { WelcomePage } from '../pages/welcome/welcome';
@@ -13,6 +16,7 @@ import { ActivityPage } from '../pages/activity/activity';
 import { RecoverPage } from '../pages/recover/recover';
 import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 @Component({
   templateUrl: 'app.html'

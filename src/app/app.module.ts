@@ -16,14 +16,15 @@ import { ActivityPage } from '../pages/activity/activity';
 import { RecoverPage } from '../pages/recover/recover';
 import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
-import { Geolocation } from '@ionic-native/geolocation';3
+import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { HttpModule } from '@angular/http';
+import { HelpPage } from '../pages/help/help';
 import { Configuration } from './app.constants';
 import { AuthService } from '../pages/login/login.service';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { RegisterService } from '../pages/register/register.service';
-
+import { AccordeonComponent} from '../components/accordeon/accordeon';
 
 @NgModule({
  declarations: [
@@ -38,6 +39,8 @@ import { RegisterService } from '../pages/register/register.service';
    recoverymailPage,
    StartPage,
    PlacePage,
+   AccordeonComponent,
+   HelpPage
  ],
  imports: [
    BrowserModule,
@@ -60,7 +63,8 @@ import { RegisterService } from '../pages/register/register.service';
    RecoverPage,
    recoverymailPage,
    StartPage,
-   PlacePage
+   PlacePage,
+   HelpPage
  ],
  providers: [
    StatusBar,

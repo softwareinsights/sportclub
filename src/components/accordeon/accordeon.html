@@ -1,4 +1,19 @@
-<!-- Generated template for the AccordeonComponent component -->
-<div>
-  {{text}}
-</div>
+<ion-card>
+  
+  <ion-card-header (click)="toggleAccordion()">
+    {{title}}
+  </ion-card-header>
+
+  <ion-card-content #cc>
+    <p>
+      Elimina y vuelve a instalar la app
+      Toca la app durante unos instantes hasta que empiece a vibrar.
+      Toca en la app.
+      Presiona el botón Inicio.
+      Visita App Store y descarga nuevamente la app.
+      Espera a que la app se descargue. 
+      A continuación, abre la app desde la pantalla de inicio.
+    </p>
+  </ion-card-content>
+</ion-card>
+

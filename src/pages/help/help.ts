@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { RecoverPage} from '../recover/recover'
+import { RecoverPage} from '../recover/recover';
+import { Http} from '@angular/http';
 
 @Component({
   selector: 'page-help',
@@ -8,7 +9,13 @@ import { RecoverPage} from '../recover/recover'
 })
 export class HelpPage {
 
-  constructor(public navCtrl: NavController) {
+  users: any[] = [];
+
+  constructor(public navCtrl: NavController, private http: Http) {
+    this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((data)=> {
+      this.users = data.json();
+      console.log(this.users);
+    })
 
   }
  olvide(): void {

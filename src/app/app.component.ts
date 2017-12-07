@@ -40,7 +40,8 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Home', component: StartPage },
-      { title: 'Agrega un Lugar', component: PlacePage }
+      { title: 'Agrega un Lugar', component: PlacePage },
+      { title: 'Ayuda', component: HelpPage}
     ];
   }
 

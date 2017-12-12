@@ -12,7 +12,7 @@ import {
   LatLng
  } from '@ionic-native/google-maps';
  import { Geolocation, Geoposition } from '@ionic-native/geolocation';
- 
+ import {AuthService} from '../login/login.service';
 
 @Component({
   selector: 'page-start',
@@ -21,7 +21,9 @@ import {
 export class StartPage {
   map: GoogleMap;
 
-  constructor(public navCtrl: NavController, private googleMaps: GoogleMaps, private geolocation: Geolocation) { }
+  
+  
+  constructor(public auth:AuthService,public navCtrl: NavController, private googleMaps: GoogleMaps, private geolocation: Geolocation) { }
 
   ionViewDidLoad() {
    this.loadMap();

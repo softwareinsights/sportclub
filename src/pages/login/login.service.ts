@@ -9,7 +9,6 @@ import { Configuration } from './../../app/app.constants';
 import { LoginInterface } from './login.interface';
 
 
-
 @Injectable()
 export class AuthService {
     
@@ -28,6 +27,8 @@ export class AuthService {
 
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json; charset=UTF-8');
+
+
     }
 
     login(values: LoginInterface): Observable<any> {
@@ -39,6 +40,8 @@ export class AuthService {
             .do(val => {
                 this.isLoggedIn = true;
                 this.localStorageService.set('isLoggedIn', true);
+
+                
             });
     }
 

@@ -1,5 +1,4 @@
 import { RegisterPage } from './../register/register';
-
 import { WelcomePage } from './../welcome/welcome';
 import { AuthService } from './login.service';
 import { LoginInterface } from './login.interface';
@@ -8,6 +7,8 @@ import { NavController } from 'ionic-angular';
 import { RecoverPage } from '../recover/recover';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { StartPage } from '../start/start';
+import {MyApp} from '../../app/app.component';
+
 
 
 @Component({
@@ -19,7 +20,7 @@ export class LoginPage {
   email:string;
   password:string;
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     protected service: AuthService, private localStorageService: LocalStorageService) {
       if(this.localStorageService.get("isLoggetIn")){
         this.navCtrl.push(StartPage);
@@ -53,5 +54,5 @@ export class LoginPage {
           });
   }
 
-
+                   
 }

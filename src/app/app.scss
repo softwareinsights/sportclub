@@ -14,10 +14,15 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
 ion-content, ion-item{
     background-color:  #212121 !important;
     color: white !important;
+}
+
+
+h1{
+    color: #fff;
+    font-size:20px;
 }
 
 button{
@@ -27,13 +32,44 @@ button{
     margin-bottom: 3px;
 }
 
+
+
+ion-content[name="no"]{
+    background-color:  #212121 !important;
+    color: white !important;
+}
+
+ion-item[name="no"]{
+    background-color:  #212121 !important;
+    color: white !important;
+}
+
+    //       Clases
+
 .toolbar-background {
     background-color:#4CAF50;
     color: white;
 }
 
-h1{
-    color: #fff;
-    font-size:20px;
+.btn{
+    background: none !important; 
 }
 
+.bt{
+    border-radius: 0px !important;
+    background-color:  #212121 !important;
+}
+
+.bt:active,.bt:hover{
+    border-radius: 0px !important;
+    background-color:#4CAF50 !important;
+}
+
+
+
+
+/*
+p[name="elemento"]{
+	
+}
+*/

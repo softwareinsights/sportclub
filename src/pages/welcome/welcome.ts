@@ -12,11 +12,11 @@ export class WelcomePage {
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
   }
-
+/*
   completar(){
     this.navCtrl.push(ComplatePage);
   }
-  
+*/
   siguiente(){
   /*  let confirm = this.alertCtrl.create({
       title: 'Lo sentimos :(',

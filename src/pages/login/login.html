@@ -2,20 +2,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      <h1 text-center>YPIX</h1>
+      <h1 text-center> YPIX </h1>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content name="modificado" padding>
   <!--
     <h1 text-center>  Bienvenido a YPIX </h1>
    <p text-center>  ¡DIVIERTETE Y SUPERATE!  </p>
   -->
-  <ion-list >
-    
-      <ion-item >
+  <ion-list>
+      <ion-item>
         <ion-label stacked>Email</ion-label>
         <ion-input [(ngModel)]="email" type="email"></ion-input>
       </ion-item>
@@ -36,6 +35,6 @@
     </div>
 
     <div padding>
-        <button ion-button clear full (click)="olvide()">  ¿Olvidaste tu contraseña? </button>
+        <button ion-button class="btn" clear full (click)="olvide()">  ¿Olvidaste tu contraseña? </button>
       </div>
 </ion-content>

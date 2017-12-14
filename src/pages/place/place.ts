@@ -1,3 +1,4 @@
+import { PlaceInterface } from './place.interface';
 import { PlaceService } from './place.service';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -23,22 +24,21 @@ export class PlacePage {
 
   constructor(public navCtrl: NavController, private googleMaps: GoogleMaps, private geolocation: Geolocation, private service: PlaceService) { }
 
-
   nombre: string;
-  descripcion: string;
+  direccion: string;
   lat: number;
-  lng:number;
-
-
+  lng: number;
 
   volver(){
     this.navCtrl.pop();
   }
 
   onSubmit(): void {
-    const values: any = {
+    const values: PlaceInterface = {
       'nombre': this.nombre,
-      'descripcion': this.descripcion
+      'direccion': this.direccion,
+      'lat': this.lat,
+      'lng': this.lng
     }
     this.service.create(values)
       .subscribe(
@@ -99,8 +99,19 @@ export class PlacePage {
 
   loadMap() {
 
+    let mapOptions: GoogleMapOptions = {
+      camera: {
+        target: {
+          lat: 43.0741904,
+          lng: -89.3809802
+        },
+        zoom: 18,
+        tilt: 30
+      }
+    };
+
     // Crea la instancia del mapa con el elemento html
-    this.map = this.googleMaps.create('map_canvas');
+    this.map = this.googleMaps.create('map_canvas', mapOptions);
 
     // Wait the MAP_READY before using any methods.
     this.map.one(GoogleMapsEvent.MAP_READY)

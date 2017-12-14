@@ -12,7 +12,7 @@ import { ActivityPage } from '../pages/activity/activity';
 import { RecoverPage } from '../pages/recover/recover';
 import { recoverymailPage } from '../pages/recoverymail/recoverymail';
 import { StartPage } from '../pages/start/start';
-import {AuthService} from '../pages/login/login.service';
+import { AuthService } from '../pages/login/login.service';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,12 +21,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage:any = LoginPage;
-
-
-
   pages: Array<{title: string, component: any}>;
 
-  constructor(public auth:AuthService,
+  constructor(public authService:AuthService,
     public menu: MenuController, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen
     ) {
     platform.ready().then(() => {
@@ -41,13 +38,12 @@ export class MyApp {
       { title: 'Home', component: StartPage },
       { title: 'Agrega un Lugar', component: PlacePage }
     ];
-
-   
   }
 
-  closeMenu() {
+  closeSession() {
     // close the menu when clicking a link from the menu
-    this.auth.logout();
+    this.authService.logout();
+    alert("Sesión cerrada correctamente");
   }
 
   openPage(page) {
